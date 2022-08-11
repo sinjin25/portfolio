@@ -1,14 +1,15 @@
 <template>
     <div class="img-container-c">
-        <div class="img-container">
+        <a :href="link"
+        class="img-container" target="_blank">
             <img :src="require('../assets/img/'+src)" alt="">
-        </div>
+        </a>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['src']
+    props: ['src', 'link']
 }
 </script>
 
@@ -19,7 +20,7 @@ export default {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        max-height: 500px;
+        max-height: 600px;
         img {
             max-width: 100%;
             object-fit: cover;
@@ -35,6 +36,7 @@ export default {
             height: 1rem;
             width: 100%;
             z-index: 2;
+            pointer-events: none;
         }
         &::after {
             bottom: 0;
@@ -46,7 +48,7 @@ export default {
         }
     }
     .img-container-c {
-        padding: 3rem;
+        padding: 2rem;
         background: #151b22;
         position: relative;
         &:hover {
@@ -67,6 +69,7 @@ export default {
             color: white;
             font-size: 3rem;
             background: rgba(0, 0, 0, .8);
+            pointer-events: none;
         }
     }
 </style>

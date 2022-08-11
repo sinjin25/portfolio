@@ -25,6 +25,7 @@ export default {
     background: var(--primary);
     color: white;
     line-height: 1.5;
+    font-size: 1.1rem;
     padding: 0.5rem 2em;
     h2 {
         font-size: 1.5rem;
@@ -36,6 +37,12 @@ export default {
         }
     }
     &__section {
+        max-width: 60ch;
+        margin: 0 auto;
+        border-left: 3px solid #0c1015;
+        margin-bottom: 1rem;
+        padding-left: 1em;
+        position: relative;
         h2 { padding-left: 0; }
         > * {
             padding-left: 1em;

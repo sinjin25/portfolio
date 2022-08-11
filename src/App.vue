@@ -8,7 +8,7 @@
     ></Bar>
     <View>
         <template v-slot:img>
-            <ImgView class="top-shadow" :src="src" />
+            <ImgView class="top-shadow" :src="src" :link="setLink()" />
         </template>
         <template v-slot:desc>
             <ProjectDescription>
@@ -23,7 +23,8 @@
                     </ul>
                 </template>
                 <template #cta>
-                    <Button class="btn">check it out</Button>
+                    <a :href="setLink()" target="_blank"><Button class="btn">see project</Button></a>
+                    <a href="https://github.com/sinjin25/front-end-mentor-problems" target="_blank"><Button class="btn">see code</Button></a>
                 </template>
             </ProjectDescription>
         </template>
@@ -56,6 +57,7 @@ export default {
     return {
         projects: projects,
         index: 0,
+        devLinks: true, // force links to prod
     }
   },
   computed: {
@@ -77,6 +79,15 @@ export default {
         if (this.index === this.projects.length - 1) this.index = 0
         else this.index++
     },
+    setLink() {
+        // hack for checking prod mode
+        let url = this.activeProj.href
+        if (!webpackHotUpdate || this.devLinks) {
+            return `https://sinjin25.github.io/front-end-mentor-problems/${url}`
+        }
+        console.log('In dev mode')
+        return `http://localhost:3000/${url}`
+    }
   }
 }
 </script>
@@ -87,5 +98,9 @@ export default {
 }
 .btn {
     margin: 0 auto;
+    min-width: 10em;
+}
+a + a {
+    margin-left: 1em;
 }
 </style>
