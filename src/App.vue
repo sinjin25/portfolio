@@ -82,7 +82,7 @@ export default {
     setLink() {
         // hack for checking prod mode
         let url = this.activeProj.href
-        if (!webpackHotUpdate || this.devLinks) {
+        if (this.devLinks) {
             return `https://sinjin25.github.io/front-end-mentor-problems/${url}`
         }
         console.log('In dev mode')
