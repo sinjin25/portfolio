@@ -8,7 +8,13 @@
     ></Bar>
     <View>
         <template v-slot:img>
-            <ImgView class="top-shadow" :src="src" :link="setLink()" />
+            <Pagination
+            :range="projects.length"
+            :active="index"
+            v-on:jump="index = $event"
+            >
+                <ImgView class="top-shadow" :src="src" :link="setLink()" />
+            </Pagination>
         </template>
         <template v-slot:desc>
             <ProjectDescription>
@@ -39,6 +45,7 @@ import Name from './components/Name.vue'
 import ProjectDescription from './components/ProjectDescription.vue'
 import Title from './components/Title.vue'
 import View from './components/View.vue'
+import Pagination from './components/Pagination.vue'
 
 import { projects } from './assets/projects'
 
@@ -52,6 +59,7 @@ export default {
     View,
     ProjectDescription,
     Title,
+    Pagination,
   },
   data() {
     return {
@@ -100,7 +108,13 @@ export default {
     margin: 0 auto;
     min-width: 10em;
 }
+
 a + a {
-    margin-left: 1em;
+    margin-top: 1rem;
+    display: inline-block;
+    @media only screen and (min-width: 768px) {
+        margin: 0;
+        margin-left: 1em;
+    }
 }
 </style>

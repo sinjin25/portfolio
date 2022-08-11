@@ -1,9 +1,9 @@
 <template>
     <div class="img-container-c">
-        <a :href="link"
+        <div
         class="img-container" target="_blank">
             <img :src="require('../assets/img/'+src)" alt="">
-        </a>
+        </div>
     </div>
 </template>
 
@@ -20,9 +20,9 @@ export default {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        max-height: 600px;
+        height: 100%;
         img {
-            max-width: 100%;
+            height: 100%;
             object-fit: cover;
         }
         /* fade */
@@ -51,25 +51,7 @@ export default {
         padding: 2rem;
         background: #151b22;
         position: relative;
-        &:hover {
-            &::after {
-                display: flex;
-            }
-        }
-        &::after {
-            display: none;
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            content: "View Live HTML";
-            z-index: 2;
-            color: white;
-            font-size: 3rem;
-            background: rgba(0, 0, 0, .8);
-            pointer-events: none;
-        }
+        height: 450px;
+        overflow: hidden;
     }
 </style>
