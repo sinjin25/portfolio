@@ -46,6 +46,7 @@
             </ProjectDescription>
         </template>
     </View>
+    <footer class="footer"></footer>
   </div>
 </template>
 <script>
@@ -162,11 +163,24 @@ a + a {
     display: flex;
     &__primary {
         flex: 1 auto;
-        /* recenter after thumbnail pushses */
-        /* padding-right: calc(0.5rem + 7rem)!important; */
-        @media only screen and (min-width: 768px) {
+    }
+    @media only screen and (min-width: 768px) {
+        background: var(--dark);
+        &__side {
+            margin-left: auto;
+        }
+        &__primary {
+            /* recenter after thumbnail pushses */
+            /* padding-right: calc(0.5rem + 7rem)!important; */
             padding-right: calc(3rem + 7rem)!important;
+            margin-right: auto;
+            max-width: 650px;
         }
     }
+}
+/* stop browser scroll */
+.footer {
+    height: 200px;
+    background: var(--dark);
 }
 </style>

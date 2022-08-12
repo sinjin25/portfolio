@@ -51,5 +51,10 @@ export default {
         font-size: 1.25rem;
         letter-spacing: 0.05em;
     }
+    @media only screen and (min-width: 768px) {
+        &-btn {
+            width: 12rem;
+        }
+    }
 }
 </style>

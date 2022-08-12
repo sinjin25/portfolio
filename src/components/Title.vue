@@ -21,6 +21,10 @@ export default {
     padding-left: 1.5em;
     flex-direction: column;
     color: white;
+    @media only screen and (min-width: 768px) {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
 }
 .nudge {
     margin-top: 1.5rem;
