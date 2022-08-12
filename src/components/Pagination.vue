@@ -45,13 +45,16 @@ export default {
     &-container {
         display: flex;
         justify-content: space-between;
-        max-width: 400px;
+        max-width: 70%;
         margin: 0 auto;
         position: absolute;
         bottom: 1.5rem;
         left: 0;
         right: 0;
         z-index: 2;
+        @media only screen and (min-width: 768px) {
+            max-width: 500px;
+        }
     }
 }
 .pagination-container {

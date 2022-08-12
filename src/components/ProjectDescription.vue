@@ -27,6 +27,7 @@ export default {
     line-height: 1.5;
     font-size: 1.1rem;
     padding: 0.5rem 2em;
+    padding-top: 2rem;
     h2 {
         font-size: 1.5rem;
         line-height: 2;

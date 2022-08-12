@@ -48,10 +48,29 @@ export default {
         }
     }
     .img-container-c {
-        padding: 2rem;
+        padding: 0.5rem;
         background: #151b22;
         position: relative;
         height: 450px;
         overflow: hidden;
+        @media only screen and (min-width: 768px) {
+            padding: 2rem;
+        }
+        &::after {
+            content: attr(screenshot);
+            text-align: right;
+            position: absolute;
+            color: white;
+            top: 1em;
+            right: 1em;
+            left: 0;
+            height: 2rem;
+            width: 15ch;
+            margin-left: auto;
+            line-height: 1;
+            padding: .5rem 1em;
+            display: inline-block;
+            background: black;
+        }
     }
 </style>

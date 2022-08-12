@@ -46,7 +46,7 @@ export default {
         text-align: center;
         justify-content: center;
         padding: 0 1em;
-        color: #be78cb;
+        color: var(--accent);
         font-weight: bold;
         font-size: 1.25rem;
         letter-spacing: 0.05em;
