@@ -11,7 +11,7 @@
             <Pagination
             :range="projects.length"
             :active="index"
-            v-on:jump="index = $event"
+            v-on:jump="jump($event)"
             >
                 <div class="main top-shadow">
                     <ThumbView class="main__side"
@@ -82,6 +82,11 @@ export default {
         devLinks: true, // force links to prod
     }
   },
+  watch: {
+    index() {
+        this.pictureIndex = 0
+    }
+  },
   computed: {
     activeProj() {
         const p = this.projects[this.index]
@@ -99,12 +104,13 @@ export default {
     left() {
         if (this.index === 0) this.index = this.projects.length - 1
         else this.index--
-        this.pictureIndex = 0
     },
     right() {
         if (this.index === this.projects.length - 1) this.index = 0
         else this.index++
-        this.pictureIndex = 0
+    },
+    jump(index) {
+        this.index = index
     },
     setLink() {
         // hack for checking prod mode
