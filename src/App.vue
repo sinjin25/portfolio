@@ -89,6 +89,9 @@ export default {
     },
     src() {
         const p = this.activeProj
+        if (this.pictureIndex > p.img.length) {
+            this.pictureIndex = 0
+        }
         return p.img[this.pictureIndex]
     }
   },
