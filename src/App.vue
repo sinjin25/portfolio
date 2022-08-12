@@ -114,6 +114,7 @@ export default {
     },
     getScreenshotType() {
         const img = this.activeProj.img[this.pictureIndex]
+        if (!img) return 'mobile view'
         if (img.search('mobile') === -1) return 'desktop view'
         return 'mobile view'
     }
