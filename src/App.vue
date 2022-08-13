@@ -41,7 +41,7 @@
                 </template>
                 <template #cta>
                     <a :href="setLink()" target="_blank"><Button class="btn">see project</Button></a>
-                    <a href="https://github.com/sinjin25/front-end-mentor-problems" target="_blank"><Button class="btn">see code</Button></a>
+                    <a :href="activeProj.repository" target="_blank"><Button class="btn">see code</Button></a>
                 </template>
             </ProjectDescription>
         </template>
@@ -117,7 +117,7 @@ export default {
         // hack for checking prod mode
         let url = this.activeProj.href
         if (this.devLinks) {
-            return `https://sinjin25.github.io/front-end-mentor-problems/${url}`
+            return `https://sinjin25.github.io/${url}`
         }
         console.log('In dev mode')
         return `http://localhost:3000/${url}`
